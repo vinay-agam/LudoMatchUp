@@ -39,7 +39,38 @@ A beautiful, real-time multiplayer Ludo game built with React, TypeScript, and F
 ```
 
 4. Enable Authentication with Anonymous sign-in
-5. Get your Firebase config object
+5. Get your Firebase config object from Project Settings > General > Your apps > Firebase SDK snippet > Config
+
+### Environment Setup
+
+1. Copy the `.env.example` file to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Update the `.env` file with your Firebase configuration:
+   ```
+   VITE_FIREBASE_API_KEY=your-api-key
+   VITE_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
+   VITE_FIREBASE_DATABASE_URL=https://your-project-id-default-rtdb.firebaseio.com
+   VITE_FIREBASE_PROJECT_ID=your-project-id
+   VITE_FIREBASE_STORAGE_BUCKET=your-project-id.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
+   VITE_FIREBASE_APP_ID=your-app-id
+   ```
+
+### GitHub Secrets Setup (for deployment)
+
+1. Go to your GitHub repository
+2. Navigate to Settings > Secrets and variables > Actions
+3. Add the following repository secrets:
+   - `FIREBASE_API_KEY`
+   - `FIREBASE_AUTH_DOMAIN`
+   - `FIREBASE_DATABASE_URL`
+   - `FIREBASE_PROJECT_ID`
+   - `FIREBASE_STORAGE_BUCKET`
+   - `FIREBASE_MESSAGING_SENDER_ID`
+   - `FIREBASE_APP_ID`
+   - `FIREBASE_SERVICE_ACCOUNT_LUDOMATCHUP` (for Firebase deployment)
 
 ### Installation
 
