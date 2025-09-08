@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animations */
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Utility classes */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .mobile-optimized {
+    font-size: 14px;
+  }
+  
+  .mobile-padding {
+    padding: 1rem;
+  }
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Game board specific styles */
+.game-board-cell {
+  transition: all 0.2s ease-in-out;
+}
+
+.game-board-cell:hover {
+  transform: scale(1.05);
+}
+
+/* Player color themes */
+.player-red {
+  --player-color: #EF4444;
+  --player-bg: #FEF2F2;
+  --player-border: #FCA5A5;
+}
+
+.player-blue {
+  --player-color: #3B82F6;
+  --player-bg: #EFF6FF;
+  --player-border: #93C5FD;
+}
+
+.player-green {
+  --player-color: #10B981;
+  --player-bg: #ECFDF5;
+  --player-border: #6EE7B7;
+}
+
+.player-yellow {
+  --player-color: #F59E0B;
+  --player-bg: #FFFBEB;
+  --player-border: #FCD34D;
+}
